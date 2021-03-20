@@ -7,6 +7,13 @@ function pushBtn(obj){
           //Calculate total(due to eval())
         inputField.innerHTML = eval(inputField.innerHTML);
     }
+    else if (pushed == '&lt;') {
+        if (inputField.innerHTML.length == 1) {
+          inputField.innerHTML = '0';
+        } else {
+          inputField.innerHTML = inputField.innerHTML.slice(0, -1);
+        }
+      }
     else if (pushed == 'AC'){
 //Clear Calculator
 inputField.innerHTML = '0';
@@ -18,5 +25,6 @@ inputField.innerHTML = pushed;
             inputField.innerHTML += pushed;
         }
     }
+    
 
 };
